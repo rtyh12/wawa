@@ -1,2 +1,5 @@
 *.pyc
 WhatsApp Chat with*
+whats
+*__pycache__
+*__init__.py

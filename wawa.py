@@ -66,7 +66,19 @@ def main():
     parser.add_argument("filepath",
                         help="the input file, in either WhatsApp (.txt) or JSON format")
     parser.add_argument("-j", "--jsonsave",
-                        help="save conversation as a json file for faster loading and better machine readability",
+                        help="save conversation as a JSON file for faster loading and better machine readability",
+                        action="store_true")
+    parser.add_argument("-p", "--pie",
+                        help="draw a pie chart of senders",
+                        action="store_true")
+    parser.add_argument("-c", "--cloud",
+                        help="draw a word cloud",
+                        action="store_true")
+    parser.add_argument("-x", "--characters",
+                        help="use characters instead of tokens (words) for all calculations",
+                        action="store_true")
+    parser.add_argument("-u", "--user",
+                        help="restrict calculations to a specific sender",
                         action="store_true")
 
     args = parser.parse_args()
