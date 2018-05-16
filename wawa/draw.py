@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
 
+<<<<<<< HEAD
 def drawFrequenciesPieChart(data, countType='message'):
     """Draw a pie chart.
     
@@ -12,6 +13,16 @@ def drawFrequenciesPieChart(data, countType='message'):
     sizes = []
     for user in labels:
         sizes.append(data[countType + 'Counts'][user])
+=======
+def drawFrequenciesPieChart(data):
+    """Draw a pie chart.
+    
+    what a surprise."""
+    import matplotlib.pyplot as plt
+
+    labels = [i[0] for i in l]
+    sizes  = [i[1] for i in l]
+>>>>>>> d6f4161a80715b17fde3aa82f327deb8ca9a6e93
 
     def absolute_value(val):
         sum = 0
