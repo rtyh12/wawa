@@ -154,11 +154,7 @@ def main():
         for i in (set(users_and_system_messages_set) - set(stripNonUsers(users_and_system_messages_set))):
             print(i)
         print()
-<<<<<<< HEAD
         
-=======
-    
->>>>>>> d6f4161a80715b17fde3aa82f327deb8ca9a6e93
     users_set = stripNonUsers(users_and_system_messages_set)
     #print(users_set)
 
@@ -180,16 +176,12 @@ def main():
     if args.pie:
         print("Loading pyplot...")
         import wawa.draw
-<<<<<<< HEAD
         if args.characters:
             wawa.draw.drawFrequenciesPieChart(data, 'character')
         elif args.words:
             wawa.draw.drawFrequenciesPieChart(data, 'word')
         else:    
             wawa.draw.drawFrequenciesPieChart(data, 'message')
-=======
-        wawa.draw.drawFrequenciesPieChart(data)
->>>>>>> d6f4161a80715b17fde3aa82f327deb8ca9a6e93
 
     #print(tuples[151][3])
 
