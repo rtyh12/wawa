@@ -1,2 +1,6 @@
+print("Initializing pyplot... ", end='')
 import matplotlib.pyplot as plt
-#import pil
+print(" done.")
+
+def drawFrequenciesPieChart(tuples):
+    pass
