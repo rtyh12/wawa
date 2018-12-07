@@ -1,6 +1,5 @@
 *.pyc
 *.txt
 *.json
-whats
 *__pycache__
 *__init__.py

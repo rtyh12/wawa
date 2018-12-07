@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # coding: utf-8
 
 import io
@@ -42,13 +43,13 @@ def countWords(string):
 
 def get_data(tuples, users_set):
     output = dict()
-    
+
     #print(users_set)
-    
+
     output['messageCounts'] = dict(total=0)
     output['characterCounts'] = dict(total=0)
     output['wordCounts'] = dict(total=0)
-    
+
     for u in users_set:
         output['messageCounts'][u] = 0
         output['characterCounts'][u] = 0
@@ -57,22 +58,22 @@ def get_data(tuples, users_set):
         if t[2] in users_set:      # to ignore system generated messages
             output['messageCounts'][t[2]]    += 1
             output['messageCounts']['total'] += 1
-            
+
             output['characterCounts'][t[2]]    += len(t[3])
             output['characterCounts']['total'] += len(t[3])
-            
+
             output['wordCounts'][t[2]]    += countWords(t[3])
             output['wordCounts']['total'] += countWords(t[3])
-            
+
     output['users'] = users_set
-            
+
     return output
 
 
 def main():
     import wawa.tuples
     import wawa.cache
-    
+
     #  --  Arguments  --  #
     import argparse
     parser = argparse.ArgumentParser()
@@ -131,9 +132,9 @@ def main():
     print(" done.")
 
     #  --  users idk  --  #
-    
+
     users_and_system_messages_set = set()
-    
+
     # i[2] is either a user's name, or a system generated message
     # on certain events.
     for i in tuples:
@@ -141,7 +142,7 @@ def main():
 
     if args.users is None:
         args.users = 0
-        
+
     if args.users > 0:
         print()
         print("Users in conversation:")
@@ -167,7 +168,7 @@ def main():
         wawa.cache.save_json(tuples, os.path.basename(filepath))
 
     #  --  Analysis  --  #
-    
+
     data = get_data(tuples, users_set)
     print(data)
 
